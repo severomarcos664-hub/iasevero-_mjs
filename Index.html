@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>IASevero — Infra de IA, Deploy Seguro e Firewall Ômega</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="IASevero: deploy 1-clique, assinatura Ed25519 e Firewall Ômega de anomalias." />
+  <link rel="icon" href="assets/favicon.ico" />
+  <!-- CSS externo, igual ao seu modelo -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="wrap bar">
+      <div class="brand">
+        <img src="assets/logo.png" alt="Logo IASevero" class="logo" />
+        <strong class="brand-title">IASevero</strong>
+      </div>
+      <nav class="nav">
+        <a href="#inicio">Início</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#cadastro">Cadastro</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1>Infra de IA pronta para produção</h1>
+        <p class="lead">Deploy 1-clique, assinatura Ed25519 e <strong>Firewall Ômega</strong> monitorando cada etapa.</p>
+        <div class="cta">
+          <a class="btn" href="#recursos">Ver recursos</a>
+          <a class="btn btn-ghost" href="#cadastro">Cadastrar projeto</a>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><strong>99,9%</strong><br><small>Uptime</small></div>
+          <div class="kpi"><strong>&lt;2 min</strong><br><small>Deploy</small></div>
+          <div class="kpi"><strong>Ed25519</strong><br><small>Assinatura</small></div>
+          <div class="kpi"><strong>Ω</strong><br><small>Firewall</small></div>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="assets/qr-code.png" alt="QR IASevero" class="qr" />
+      </div>
+    </div>
+  </section>
+
+  <!-- RECURSOS -->
+  <section id="recursos" class="section">
+    <div class="wrap">
+      <h2>Recursos</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Deploy 1-Clique</h3>
+          <p>GitHub Pages/Vercel, com rollback rápido e logs por release.</p>
+        </article>
+        <article class="card">
+          <h3>Assinatura & Auditoria</h3>
+          <p>Pacotes assinados (Ed25519) e trilha completa de auditoria.</p>
+        </article>
+        <article class="card">
+          <h3>Firewall Ômega</h3>
+          <p>Detecção de anomalias no fluxo de deploy com resposta automática.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section id="projetos" class="section">
+    <div class="wrap">
+      <h2>Projetos</h2>
+      <div class="proj-grid">
+        <article class="proj">
+          <h4>HostSevero</h4>
+          <p>Hospedagem com upload seguro e auditoria.</p>
+        </article>
+        <article class="proj">
+          <h4>BinbaseX</h4>
+          <p>Landing do token com tokenomics e roadmap.</p>
+        </article>
+        <article class="proj">
+          <h4>USA.X</h4>
+          <p>Site institucional com integrações digitais.</p>
+        </article>
+        <article class="proj">
+          <h4>Firewall Ω</h4>
+          <p>Sensor leve de anomalias para pipelines de deploy.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CADASTRO -->
+  <section id="cadastro" class="section">
+    <div class="wrap">
+      <h2>Cadastro de Projeto</h2>
+      <form id="form-cadastro" class="form" data-mailto="admin@iasevero.com">
+        <input id="nome" name="nome" placeholder="Seu nome" required />
+        <input id="email" name="email" type="email" placeholder="Seu e-mail" required />
+        <input id="projeto" name="projeto" placeholder="Nome do projeto" required />
+        <textarea id="descricao" name="descricao" rows="5" placeholder="Descreva o que você precisa (site, deploy, token, etc.)" required></textarea>
+        <button type="submit">Enviar</button>
+        <small class="hint">O formulário abre seu app de e-mail com os dados.</small>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="section">
+    <div class="wrap">
+      <h2>Contato</h2>
+      <p>Fale com a gente: <a href="mailto:admin@iasevero.com">admin@iasevero.com</a></p>
+      <p><a class="btn btn-ghost" href="#inicio">Voltar ao topo</a></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap">
+      <small>© 2025 IASevero. Todos os direitos reservados.</small>
+    </div>
+  </footer>
+
+  <!-- JS externo, igual ao seu modelo -->
+  <script src="scripts.js"></script>
+
+  <!-- Fallback JS mínimo (se quiser manter tudo funcionando mesmo sem scripts.js) -->
+  <script>
+    // Smooth scroll básico
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click', function(e){
+        var id=a.getAttribute('href').slice(1), el=document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); }
+      });
+    });
+
+    // Envio via mailto (usa o atributo data-mailto do form)
+    var form = document.getElementById('form-cadastro');
+    if(form){
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var to = form.getAttribute('data-mailto') || 'admin@iasevero.com';
+        var nome = document.getElementById('nome').value.trim();
+        var email = document.getElementById('email').value.trim();
+        var projeto = document.getElementById('projeto').value.trim();
+        var desc = document.getElementById('descricao').value.trim();
+        var assunto = encodeURIComponent('Cadastro IASevero — ' + projeto);
+        var corpo = encodeURIComponent(
+          'Nome: ' + nome + '\\n' +
+          'E-mail: ' + email + '\\n' +
+          'Projeto: ' + projeto + '\\n' +
+          'Descrição:\\n' + desc
+        );
+        window.location.href = 'mailto:' + to + '?subject=' + assunto + '&body=' + corpo;
+      });
+    }
+  </script>
+</body>
+</html>
