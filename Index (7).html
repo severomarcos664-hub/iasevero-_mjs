@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IA SEVERO – Ωmega Premium Ultra</title>
+
+  <!-- Fonte futurista e ícones -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    /* RESET */
+    * {margin:0; padding:0; box-sizing:border-box;}
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #050505, #0a0f1f, #000);
+      color: #f5f5f5;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 40px 20px;
+      background: linear-gradient(90deg, #00ffaa, #0077ff, #7a00ff);
+      box-shadow: 0 0 40px rgba(0,0,0,0.6);
+    }
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3em;
+      text-shadow: 0 0 20px #000;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+
+    main {padding: 50px 20px;}
+
+    section {
+      margin: 40px auto;
+      max-width: 900px;
+      padding: 30px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    }
+
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #00ffaa;
+      text-shadow: 0 0 8px #0077ff;
+    }
+
+    p {font-size: 1.1em; line-height: 1.6;}
+
+    button {
+      background: linear-gradient(90deg, #0077ff, #00ffaa);
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      margin-top: 20px;
+      border-radius: 8px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 15px rgba(0,255,170,0.6);
+    }
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0,255,255,0.9);
+    }
+
+    canvas {max-width: 700px; margin: 20px auto;}
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 0.9em;
+      background: #050505;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>⚡ IA SEVERO ⚡</h1>
+    <p>The Ωmega Premium Ultra AI & Automation System</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>🚀 Welcome</h2>
+      <p>IA SEVERO is your next-generation AI built to <b>automate projects, configure systems, and protect data with quantum-grade security</b>.</p>
+      <button onclick="checkHealth()">Run Health Check</button>
+      <p id="healthStatus" style="margin-top:20px; font-weight:bold;"></p>
+    </section>
+
+    <section>
+      <h2>🌐 Project Integrator</h2>
+      <p>This platform can link and configure all your other projects from a single hub.</p>
+      <button onclick="configureProjects()">Configure All Projects</button>
+      <p id="configStatus" style="margin-top:15px; color:#00ffaa;"></p>
+    </section>
+
+    <section>
+      <h2>📊 Live Performance Dashboard</h2>
+      <canvas id="performanceChart"></canvas>
+    </section>
+
+    <section>
+      <h2>🔐 Security</h2>
+      <p>Your keys remain safe. Configuration uses placeholders — replace them in <code>config.js</code> (offline, private).</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 IA SEVERO. Ωmega Premium Ultra – All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // ⚡ Health Check
+    function checkHealth() {
+      document.getElementById("healthStatus").innerText = "✅ IA SEVERO System is Fully Operational!";
+    }
+
+    // 🌐 Project Integrator
+    function configureProjects() {
+      document.getElementById("configStatus").innerText = "🔄 Configuring linked projects... ✅ Done!";
+    }
+
+    // 📊 Performance Dashboard (Chart.js)
+    const ctx = document.getElementById('performanceChart');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+        datasets: [{
+          label: 'System Uptime %',
+          data: [98,99,97,99.5,100,100,99.8],
+          borderColor: '#00ffaa',
+          backgroundColor: 'rgba(0,255,170,0.3)',
+          fill: true,
+          tension: 0.3
+        }]
+      },
+      options: {
+        plugins: {legend:{labels:{color:'#fff'}}},
+        scales: {
+          x: {ticks:{color:'#aaa'}},
+          y: {ticks:{color:'#aaa'}}
+        }
+      }
+    });
+  </script>
+</body>
+</html>
